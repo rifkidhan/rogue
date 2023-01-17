@@ -23,7 +23,7 @@
 <svelte:element this={component} class="display-lg section-title" aria-label={content}>
 	{#each content.split(' ') as title, i}
 		{#if content.split(' ').length - 1 === i}
-			<span class="text-alizarin wrapper title-wrapper">
+			<span class="wrapper title-wrapper text-alizarin">
 				{#each title.split('') as char}
 					<span style:opacity="0" style:translate="transformY(0)">
 						{char}

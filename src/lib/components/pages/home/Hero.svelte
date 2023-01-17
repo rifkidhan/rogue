@@ -143,14 +143,14 @@
 	</div>
 	<div class="title">
 		<h1 class="owner display-xl" aria-label="Jonathan Galileo">
-			<span aria-hidden="true" class="inline-flex owner-name-first overflow-hidden">
+			<span aria-hidden="true" class="owner-name-first inline-flex overflow-hidden">
 				{#each ownerName[0].split('') as char}
 					<span aria-hidden="true">
 						{char}
 					</span>
 				{/each}
 			</span>
-			<span aria-hidden="true" class="inline-flex owner-name-second overflow-hidden">
+			<span aria-hidden="true" class="owner-name-second inline-flex overflow-hidden">
 				{#each ownerName[1].split('') as char}
 					<span aria-hidden="true">
 						{char}
