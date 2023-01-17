@@ -43,4 +43,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: 'rogue'
-          entrypoint: 'build/index.js'
+          entrypoint: 'index.js'
+          root: build
