@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--primary: #eeedee;
+	--secondary: #000000;
+	--alizarin: #db574d;
+	--muted: #101010;
+	--inversion: #ffffff;
+
+	--text-base: var(--secondary);
+	--text-primary: var(--secondary);
+	--text-secondary: var(--inversion);
+}
+
+.dark {
+	--primary: #101010;
+	--secondary: #ffffff;
+	--muted: #eeedee;
+	--inversion: #000000;
+
+	--text-base: var(--secondary);
+	--text-primary: var(--secondary);
+	--text-secondary: var(--inversion);
+}
+@font-face {
+	font-family: 'Clash Display';
+	src: url('./fonts/ClashDisplay-Variable.woff2') format('woff2'),
+		url('./fonts/ClashDisplay-Variable.woff') format('woff'),
+		url('./fonts/ClashDisplay-Variable.ttf') format('truetype');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@layer base {
+	html {
+		scroll-behavior: initial;
+	}
+
+	html,
+	body {
+		@apply box-border h-auto min-h-full touch-manipulation overscroll-x-none bg-primary
+		font-sans font-normal antialiased selection:bg-alizarin;
+
+		text-rendering: optimizeLegibility;
+		scrollbar-color: var(--alizarin) transparent;
+	}
+	h1 {
+		@apply text-5xl leading-[110%];
+	}
+	h2 {
+		@apply text-4xl leading-[110%];
+	}
+	h3 {
+		@apply text-3xl leading-[110%];
+	}
+	h4 {
+		@apply text-2xl leading-[110%];
+	}
+	h5 {
+		@apply text-xl uppercase leading-[120%];
+	}
+	h6 {
+		@apply text-lg uppercase leading-[120%];
+	}
+}
+
+@layer components {
+	.display-xl {
+		@apply text-[200px] leading-[90%];
+	}
+	.display-lg {
+		@apply text-8xl uppercase leading-[110%];
+	}
+	.display-sm {
+		@apply text-6xl uppercase leading-[110%];
+	}
+	.h1 {
+		@apply text-5xl uppercase leading-[110%];
+	}
+	.h2 {
+		@apply text-4xl uppercase leading-[110%];
+	}
+	.h3 {
+		@apply text-3xl uppercase leading-[110%];
+	}
+	.h4 {
+		@apply text-2xl uppercase leading-[110%];
+	}
+
+	.fit {
+		min-height: calc(100vh - 88px);
+	}
+}
+
+@layer utilities {
+	::-webkit-scrollbar {
+		@apply h-2 w-2 overflow-auto;
+	}
+
+	::-webkit-scrollbar-track {
+		@apply bg-transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply rounded-md bg-alizarin;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-alizarin opacity-80;
+	}
+	.skeleton {
+		@apply shadow-accent-4/10 before:border-accent-4/20 before:via-secondary/30 relative isolate
+    overflow-hidden shadow-xl before:absolute before:inset-0
+    before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:bg-gradient-to-r before:from-transparent before:to-transparent;
+	}
+}
